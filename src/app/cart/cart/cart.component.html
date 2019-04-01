@@ -1,0 +1,15 @@
+<div class="text-center">
+  <button class="btn btn-info btn-sm" (click)='decQty()'>
+    <i class="fas fa-minus"></i>
+  </button>
+ <button class="btn btn-sm btn-outline border border-success mx-2" disabled>{{qty}}</button>
+  <button class="btn btn-info btn-sm" (click)='incQty()'>
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="btn btn-danger btn-sm mx-2 my-2" (click)='addCart()'>
+    Add to Cart
+  </button>
+</div>
+<div *ngIf='message' class="alert alert-danger my-2">
+  {{message}}
+</div>

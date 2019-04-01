@@ -1,0 +1,11 @@
+@media(min-width: 768px){
+    .album{
+        width: 49%;
+    }
+}
+
+@media(min-width: 992px){
+    .album{
+        width: 33%;
+    }
+}

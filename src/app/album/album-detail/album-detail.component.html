@@ -1,0 +1,30 @@
+<div class="container" *ngIf='album'>
+  <div class="row my-3">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card m-2">
+          <img src='{{album.image[3]["#text"]}}' alt=" {{album.name}} image" class="card-img-top  ">
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card m-2">
+        <div class="card-body text-center">
+          <h4 class="card-title text-primary">{{album.name}}</h4>
+          <h4 class="card-title text-danger">${{album.price}}</h4>
+          <a routerLink='/artists/{{album.artist._id}}'>{{album.artist.name}}</a>
+        </div>
+        <div class="card-footer text-center">
+          <app-cart [album]='album'></app-cart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <ul class="list-group mx-2 my-4">
+        <li class="active list-group-item text-center font-weight-bold">Track List</li>
+        <li class="list-group-item" *ngFor='let track of album.tracks, index as i'><span class="badge badge-secondary mr-3">{{i+1}}</span>{{track.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

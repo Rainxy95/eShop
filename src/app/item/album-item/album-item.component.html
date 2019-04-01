@@ -1,0 +1,7 @@
+<div class="card mx-2 my-1">
+  <img src='{{album.image[2]["#text"]}}' class="card-img-top" alt="album-cover">
+  <div class="card-body text-center">
+    <a routerLink="/albums/{{album._id}}">{{album.name}}</a>
+    <span class="text-danger d-block">${{album.price}}</span>
+  </div>
+</div>

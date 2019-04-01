@@ -1,0 +1,24 @@
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle btn btn-dark" data-toggle="dropdown">
+      <i class="fa fa-cart-arrow-down fa-lg text-danger"></i>
+      <span class="badge badge-primary ml-2">{{cartService.totalCount}}</span>
+  </button>
+  <div class="dropdown-menu">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+              <span class="badge badge-danger ml-2">1</span>
+          </td>
+          <td>
+            <span class="badge badge-primary m-2">$9.99</span>
+          </td>
+          <td>
+            <a href="#">Yolo</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a class="dropdown-item" routerLink='checkout'>Go to checkout</a>
+  </div>
+</li>

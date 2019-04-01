@@ -1,0 +1,42 @@
+<div class="container" *ngIf='artist'>
+  <div class="row">
+    <div class="artist col-md-6 col-lg-4 my-3">
+      <div class="card">
+        <img class="cart-img-top" src='{{artist.artist.image[3]["#text"]}}' alt="artist-cover">
+        <div class="card-body">
+          <h5 class="cart-title">{{artist.artist.name}}</h5>
+          <div class="card-text" [innerHtml]='artist.artist.description'></div>
+        </div>
+        <div class="card-footer">
+          <span *ngFor='let tag of artist.artist.tags' class="badge badge-secondary mx-1">{{tag}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="artist-album col-md-6 col-lg-8 my-3">
+      <div class="row mb-3">
+        <div class="d-flex flex-wrap justify-content-between">
+          <div class="album" *ngFor='let album of displayItems'>
+            <app-album-item [album]='album'></app-album-item>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <nav class="mx-auto">
+          <div class="pagination text-center">
+            <li class="page-item" [ngClass]="{'disabled': currentPage==1}" >
+              <button class="page-link" [disabled]='currentPage==1'(click)='setCurrentPage(currentPage-1)'>
+                <span>&laquo;</span>
+              </button>
+            </li>
+            <li *ngFor='let number of pageNumbers' class="page-item" [ngClass]='{active:currentPage==number}' >
+              <button class="page-link" [disabled]='currentPage==number' (click)='setCurrentPage(number)'>{{number}}</button>
+            </li>
+            <li class="page-item" [ngClass]="{'disabled': currentPage==numberOfPage}" >
+              <button class="page-link" [disabled]='currentPage==numberOfPage' (click)='setCurrentPage(currentPage+1)'><span>&raquo;</span></button>
+            </li>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
