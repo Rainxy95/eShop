@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as io  from 'socket.io-client'
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,8 @@ import * as io  from 'socket.io-client'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  socket:any;
+  socket: any;
   title = 'my-shop-app';
-  constructor(){
-    this.socket = io('http://localhost:5000/')
+  constructor() {
   }
 }

@@ -7,24 +7,24 @@ import { ArtistService } from '../artist.service';
   styleUrls: ['./artist.component.css']
 })
 export class ArtistComponent implements OnInit {
-  artists=[];
-  page:number=1;
-  constructor( 
+  artists = [];
+  page = 1;
+  constructor(
     private artistService: ArtistService,
   ) { }
 
   ngOnInit() {
-    this.getArtists(this.page)
+    this.getArtists(this.page);
   }
-  getArtists(page){
+  getArtists(page) {
     this.artistService.getArtists(page).
-      subscribe(artists=>{
-        this.artists=this.artists.concat(artists);
-      })
+      subscribe(artists => {
+        this.artists = this.artists.concat(artists);
+      });
   }
 
-  showMore(){
-    this.getArtists(this.page++)
+  showMore() {
+    this.getArtists(++this.page);
   }
 
 }
